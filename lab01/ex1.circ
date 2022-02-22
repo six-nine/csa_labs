@@ -202,14 +202,29 @@
       <a name="appearance" val="NewPins"/>
       <a name="label" val="A"/>
     </comp>
-    <comp lib="1" loc="(190,130)" name="XOR Gate"/>
-    <wire from="(190,130)" to="(300,130)"/>
-    <wire from="(50,190)" to="(90,190)"/>
-    <wire from="(50,70)" to="(90,70)"/>
-    <wire from="(90,110)" to="(130,110)"/>
-    <wire from="(90,150)" to="(130,150)"/>
-    <wire from="(90,150)" to="(90,190)"/>
-    <wire from="(90,70)" to="(90,110)"/>
+    <comp lib="1" loc="(190,170)" name="AND Gate"/>
+    <comp lib="1" loc="(190,90)" name="AND Gate"/>
+    <comp lib="1" loc="(280,130)" name="OR Gate"/>
+    <comp lib="1" loc="(90,170)" name="NOT Gate"/>
+    <comp lib="1" loc="(90,90)" name="NOT Gate"/>
+    <wire from="(120,110)" to="(120,170)"/>
+    <wire from="(120,110)" to="(140,110)"/>
+    <wire from="(190,170)" to="(220,170)"/>
+    <wire from="(190,90)" to="(220,90)"/>
+    <wire from="(220,110)" to="(230,110)"/>
+    <wire from="(220,150)" to="(220,170)"/>
+    <wire from="(220,150)" to="(230,150)"/>
+    <wire from="(220,90)" to="(220,110)"/>
+    <wire from="(280,130)" to="(300,130)"/>
+    <wire from="(50,170)" to="(50,190)"/>
+    <wire from="(50,170)" to="(60,170)"/>
+    <wire from="(50,190)" to="(140,190)"/>
+    <wire from="(50,70)" to="(140,70)"/>
+    <wire from="(50,70)" to="(50,90)"/>
+    <wire from="(50,90)" to="(60,90)"/>
+    <wire from="(90,150)" to="(140,150)"/>
+    <wire from="(90,170)" to="(120,170)"/>
+    <wire from="(90,90)" to="(90,150)"/>
   </circuit>
   <circuit name="MUX2">
     <a name="appearance" val="logisim_evolution"/>
@@ -363,12 +378,6 @@
     <wire from="(90,470)" to="(90,560)"/>
   </circuit>
 </project>
-<!--Mon Feb 21 21:26:50 2022-->
-<!--/Users/vadimkozlov/Labs/csa_labs/lab01-->
-<!--vadimkozlov-->
-<!--Tue Feb 22 11:02:59 2022-->
-<!--/Users/vadimkozlov/Labs/csa_labs/lab01-->
-<!--vadimkozlov-->
-<!--Tue Feb 22 11:47:23 2022-->
+<!--Tue Feb 22 11:50:37 2022-->
 <!--/Users/vadimkozlov/Labs/csa_labs/lab01-->
 <!--vadimkozlov-->
