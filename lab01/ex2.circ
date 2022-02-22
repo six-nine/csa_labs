@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project source="3.4.3-61c.7ae7f66" version="1.0">
+<project source="3.3.6" version="1.0">
   This file is intended to be loaded by Logisim-evolution (https://github.com/reds-heig/logisim-evolution).
 
   <lib desc="#Wiring" name="0">
@@ -125,13 +125,14 @@
     <comp lib="0" loc="(100,210)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="clk"/>
-      <a name="locked" val="true"/>
+    </comp>
+    <comp lib="0" loc="(140,120)" name="Constant">
+      <a name="width" val="8"/>
     </comp>
     <comp lib="0" loc="(480,180)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
       <a name="label" val="ADD_OUT"/>
-      <a name="locked" val="true"/>
       <a name="output" val="true"/>
       <a name="width" val="8"/>
     </comp>
@@ -139,9 +140,31 @@
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
       <a name="label" val="REG_OUT"/>
-      <a name="locked" val="true"/>
       <a name="output" val="true"/>
       <a name="width" val="8"/>
     </comp>
+    <comp lib="2" loc="(220,130)" name="Adder"/>
+    <comp lib="3" loc="(310,160)" name="Register">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <wire from="(100,210)" to="(130,210)"/>
+    <wire from="(130,210)" to="(130,240)"/>
+    <wire from="(130,240)" to="(310,240)"/>
+    <wire from="(140,120)" to="(180,120)"/>
+    <wire from="(150,140)" to="(150,300)"/>
+    <wire from="(150,140)" to="(180,140)"/>
+    <wire from="(150,300)" to="(420,300)"/>
+    <wire from="(220,130)" to="(310,130)"/>
+    <wire from="(310,130)" to="(310,190)"/>
+    <wire from="(310,130)" to="(480,130)"/>
+    <wire from="(310,230)" to="(310,240)"/>
+    <wire from="(370,190)" to="(420,190)"/>
+    <wire from="(420,190)" to="(420,240)"/>
+    <wire from="(420,240)" to="(420,300)"/>
+    <wire from="(420,240)" to="(480,240)"/>
+    <wire from="(480,130)" to="(480,180)"/>
   </circuit>
 </project>
+<!--Tue Feb 22 11:03:01 2022-->
+<!--/Users/vadimkozlov/Labs/csa_labs/lab01-->
+<!--vadimkozlov-->
