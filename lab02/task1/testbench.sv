@@ -19,6 +19,9 @@ always
 // на старте теста, загрузите вектора и запустите сброс
 initial 
   begin
+    $dumpfile("testbench.vcd");
+    $dumpvars(0, testbench);
+
     $readmemb("thunderbird.tv", testvectors); 
     vectornum = 0; errors = 0; reset = 1; #22; reset = 0; 
   end 
@@ -41,7 +44,8 @@ always @(negedge clk)
     vectornum = vectornum + 1;
     if (testvectors[vectornum] === 8'bx) begin 
       $display("%d tests completed with %d errors", vectornum, errors); 
-      $stop; 
+      $stop;
+      $finish;
     end 
   end 
 endmodule 
