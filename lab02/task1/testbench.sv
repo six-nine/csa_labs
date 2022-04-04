@@ -44,7 +44,6 @@ always @(negedge clk)
     vectornum = vectornum + 1;
     if (testvectors[vectornum] === 8'bx) begin 
       $display("%d tests completed with %d errors", vectornum, errors); 
-      $stop;
       $finish;
     end 
   end 
