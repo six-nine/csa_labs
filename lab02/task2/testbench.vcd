@@ -1,0 +1,260 @@
+$date
+	Tue Apr  5 13:17:16 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 2 ! result [1:0] $end
+$var reg 1 " clk $end
+$var reg 2 # dir [1:0] $end
+$var reg 32 $ errors [31:0] $end
+$var reg 2 % expected [1:0] $end
+$var reg 1 & reset $end
+$var reg 32 ' vectornum [31:0] $end
+$scope module dut $end
+$var wire 1 " clk $end
+$var wire 2 ( dir [1:0] $end
+$var wire 1 & reset $end
+$var wire 1 ) sword $end
+$var wire 3 * place [2:0] $end
+$var reg 2 + result [1:0] $end
+$scope module pl_fsm $end
+$var wire 1 " clk $end
+$var wire 2 , dir [1:0] $end
+$var wire 3 - place [2:0] $end
+$var wire 1 & reset $end
+$var wire 1 ) sword $end
+$var reg 3 . state [2:0] $end
+$upscope $end
+$scope module sw_fsm $end
+$var wire 1 " clk $end
+$var wire 3 / place [2:0] $end
+$var wire 1 & reset $end
+$var wire 1 ) sword $end
+$var reg 1 0 state $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+00
+b0 /
+b0 .
+b0 -
+bx ,
+b0 +
+b0 *
+0)
+bx (
+b0 '
+1&
+bx %
+b0 $
+bx #
+1"
+b0 !
+$end
+#5
+0"
+#10
+1"
+#11
+b1 #
+b1 (
+b1 ,
+b0 %
+#15
+0"
+#20
+1"
+#22
+0&
+#25
+b1 '
+0"
+#30
+b1 *
+b1 -
+b1 /
+b1 .
+1"
+#31
+b11 #
+b11 (
+b11 ,
+#35
+b10 '
+0"
+#40
+b10 *
+b10 -
+b10 /
+b10 .
+1"
+#41
+b0 #
+b0 (
+b0 ,
+#45
+b11 '
+0"
+#50
+b11 *
+b11 -
+b11 /
+b11 .
+1"
+#51
+b1 #
+b1 (
+b1 ,
+#55
+b100 '
+0"
+#60
+b10 *
+b10 -
+b10 /
+b10 .
+1)
+10
+1"
+#61
+b10 #
+b10 (
+b10 ,
+#65
+b101 '
+0"
+#70
+b1 *
+b1 -
+b1 /
+b1 .
+1"
+#71
+b11 #
+b11 (
+b11 ,
+#75
+b110 '
+0"
+#80
+b10 *
+b10 -
+b10 /
+b10 .
+1"
+#81
+b1 #
+b1 (
+b1 ,
+#85
+b111 '
+0"
+#90
+b1 !
+b1 +
+b101 *
+b101 -
+b101 /
+b101 .
+1"
+#91
+b0 #
+b0 (
+b0 ,
+b1 %
+#95
+b0 !
+b0 +
+b0 *
+b0 -
+b0 /
+b0 .
+0)
+00
+1&
+0"
+#100
+1"
+#105
+0"
+#110
+1"
+#115
+0"
+#117
+b1000 '
+0&
+#120
+b1 *
+b1 -
+b1 /
+b1 .
+1"
+#121
+b1 #
+b1 (
+b1 ,
+b0 %
+#125
+b1001 '
+0"
+#130
+b10 *
+b10 -
+b10 /
+b10 .
+1"
+#131
+b11 #
+b11 (
+b11 ,
+#135
+b1010 '
+0"
+#140
+1"
+#141
+b1 #
+b1 (
+b1 ,
+#145
+b1011 '
+0"
+#150
+b10 !
+b10 +
+b110 *
+b110 -
+b110 /
+b110 .
+1"
+#151
+b10 %
+#155
+b0 !
+b0 +
+b0 *
+b0 -
+b0 /
+b0 .
+1&
+0"
+#160
+1"
+#165
+0"
+#170
+1"
+#175
+0"
+#177
+b1100 '
+0&
