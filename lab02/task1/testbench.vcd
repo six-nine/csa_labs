@@ -1,0 +1,446 @@
+$date
+	Tue Apr 12 17:41:13 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 1 ! rc $end
+$var wire 1 " rb $end
+$var wire 1 # ra $end
+$var wire 1 $ lc $end
+$var wire 1 % lb $end
+$var wire 1 & la $end
+$var reg 1 ' clk $end
+$var reg 32 ( errors [31:0] $end
+$var reg 6 ) expected [5:0] $end
+$var reg 1 * left $end
+$var reg 1 + reset $end
+$var reg 1 , right $end
+$var reg 32 - vectornum [31:0] $end
+$scope module dut $end
+$var wire 1 ' clk $end
+$var wire 1 * left $end
+$var wire 1 + reset $end
+$var wire 1 , right $end
+$var wire 1 ! rc $end
+$var wire 1 " rb $end
+$var wire 1 # ra $end
+$var wire 1 . r1 $end
+$var wire 1 / r0 $end
+$var wire 1 $ lc $end
+$var wire 1 % lb $end
+$var wire 1 & la $end
+$var wire 1 0 l1 $end
+$var wire 1 1 l0 $end
+$var wire 1 2 c1 $end
+$var wire 1 3 c0 $end
+$var wire 1 4 b1 $end
+$var wire 1 5 b0 $end
+$var wire 1 6 a1 $end
+$var wire 1 7 a0 $end
+$scope module current_state $end
+$var wire 1 ' clk $end
+$var wire 5 8 d [4:0] $end
+$var wire 1 + reset $end
+$var reg 5 9 q [4:0] $end
+$upscope $end
+$scope module decoder $end
+$var wire 1 7 a $end
+$var wire 1 5 b $end
+$var wire 1 3 c $end
+$var wire 1 1 l $end
+$var wire 1 & la $end
+$var wire 1 % lb $end
+$var wire 1 $ lc $end
+$var wire 1 / r $end
+$var wire 1 # ra $end
+$var wire 1 " rb $end
+$var wire 1 ! rc $end
+$upscope $end
+$scope module next_logic $end
+$var wire 1 7 a0 $end
+$var wire 1 6 a1 $end
+$var wire 1 5 b0 $end
+$var wire 1 4 b1 $end
+$var wire 1 3 c0 $end
+$var wire 1 2 c1 $end
+$var wire 1 * in_l $end
+$var wire 1 , in_r $end
+$var wire 1 1 l0 $end
+$var wire 1 0 l1 $end
+$var wire 1 / r0 $end
+$var wire 1 . r1 $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 9
+bx00 8
+07
+x6
+05
+04
+03
+02
+01
+x0
+0/
+x.
+b0 -
+x,
+1+
+x*
+bx )
+b0 (
+1'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#5
+0'
+#10
+1'
+#11
+00
+0.
+b0 8
+06
+0*
+0,
+b0 )
+#15
+0'
+#20
+1'
+#22
+0+
+#25
+b1 -
+0'
+#30
+1'
+#31
+10
+b10100 8
+16
+1*
+#35
+b10 -
+0'
+#40
+1&
+06
+b10010 8
+14
+17
+11
+b10100 9
+1'
+#41
+b100000 )
+#45
+b11 -
+0'
+#50
+1%
+12
+b10001 8
+04
+15
+07
+b10010 9
+1'
+#51
+b110000 )
+#55
+b100 -
+0'
+#60
+00
+1$
+b0 8
+02
+13
+05
+b10001 9
+1'
+#61
+b111000 )
+#65
+b101 -
+0'
+#70
+10
+b10100 8
+16
+0&
+0%
+0$
+03
+01
+b0 9
+1'
+#71
+b0 )
+#75
+b110 -
+0'
+#80
+1&
+06
+b10010 8
+14
+17
+11
+b10100 9
+1'
+#81
+b100000 )
+#85
+b111 -
+0'
+#90
+1%
+12
+b10001 8
+04
+15
+07
+b10010 9
+1'
+#91
+0*
+b110000 )
+#95
+b1000 -
+0'
+#100
+00
+1$
+b0 8
+02
+13
+05
+b10001 9
+1'
+#101
+1,
+b111000 )
+#105
+b1001 -
+0'
+#110
+1.
+b1100 8
+16
+0&
+0%
+0$
+03
+01
+b0 9
+1'
+#111
+b0 )
+#115
+b1010 -
+0'
+#120
+1#
+06
+b1010 8
+14
+17
+1/
+b1100 9
+1'
+#121
+b100 )
+#125
+b1011 -
+0'
+#130
+1"
+12
+b1001 8
+04
+15
+07
+b1010 9
+1'
+#131
+0,
+b110 )
+#135
+b1100 -
+0'
+#140
+0.
+1!
+b0 8
+02
+13
+05
+b1001 9
+1'
+#141
+b111 )
+#145
+b1101 -
+0'
+#150
+0#
+0"
+0!
+03
+0/
+b0 9
+1'
+#151
+b0 )
+#155
+b1110 -
+0'
+#160
+1'
+#165
+b1111 -
+0'
+#170
+1'
+#171
+1.
+b1100 8
+16
+1,
+#175
+b10000 -
+0'
+#180
+1#
+06
+b1010 8
+14
+17
+1/
+b1100 9
+1'
+#181
+b100 )
+#185
+b10001 -
+0'
+#190
+1"
+12
+b1001 8
+04
+15
+07
+b1010 9
+1'
+#191
+1*
+0,
+b110 )
+#195
+b10010 -
+0'
+#200
+0.
+1!
+b0 8
+02
+13
+05
+b1001 9
+1'
+#201
+0*
+b111 )
+#205
+b10011 -
+0'
+#210
+0#
+0"
+0!
+03
+0/
+b0 9
+1'
+#211
+10
+b10100 8
+16
+1*
+b0 )
+#215
+b10100 -
+0'
+#220
+1&
+06
+b10010 8
+14
+17
+11
+b10100 9
+1'
+#221
+b100000 )
+#225
+b10101 -
+0'
+#230
+1%
+12
+b10001 8
+04
+15
+07
+b10010 9
+1'
+#231
+b110000 )
+#235
+b10110 -
+0'
+#240
+00
+1$
+b0 8
+02
+13
+05
+b10001 9
+1'
+#241
+0*
+b111000 )
+#245
+b10111 -
+0'
+#250
+0&
+0%
+0$
+03
+01
+b0 9
+1'
+#251
+b0 )
+#255
+b11000 -
+0'
