@@ -11,8 +11,10 @@ module place_FSM(input logic clk,
     tunnel = 3'b001,
     river = 3'b010,
     cache = 3'b011,
+    dragon = 3'b100,
     win = 3'b101,
-    die = 3'b110;
+    die = 3'b110,
+    not_princess = 3'b111;
 
   localparam[1:0]
     l = 2'b00,
@@ -32,10 +34,14 @@ module place_FSM(input logic clk,
             cave:
               state <= tunnel;
             tunnel:
-              if (dir == l)
-                state <= cave;
-              else
-                state <= river;
+              case (dir)
+                l:
+                  state <= cave;
+                d:
+                  state <= river;
+                r:
+                  state <= not_princess;
+              endcase
             river:
               case (dir)
                 l:
@@ -43,13 +49,17 @@ module place_FSM(input logic clk,
                 u:
                   state <= tunnel;
                 r:
-                  if (sword)
-                    state <= win;
-                  else 
-                    state <= die;
+                  state <= dragon;
               endcase
             cache:
               state <= river;
+            not_princess:
+              state <= dragon;
+            dragon:
+              if (sword)
+                state <= win;
+              else 
+                state <= die;
           endcase
         end
     end

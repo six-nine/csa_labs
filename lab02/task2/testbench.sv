@@ -23,13 +23,13 @@ initial
     $dumpvars(0, testbench);
 
     $readmemb("testvectors.tv", testvectors); 
-    vectornum = 0; errors = 0; reset = 1; #22; reset = 0; 
+    vectornum = 0; errors = 0; reset = 1; #18; reset = 0; 
   end 
 
 // применение тестовых векторов по нарастающему фронту тактового сигнала
 always @(posedge clk) 
   begin
-    #1; {dir, expected} = testvectors[vectornum]; 
+    {dir, expected} = testvectors[vectornum]; 
   end 
 
 // проверка результатов по спадающему фронту сигнала clk

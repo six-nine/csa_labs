@@ -5,7 +5,7 @@ module flopr(input  logic       clk,
 
   always @(posedge clk)
     if (reset) 
-      q <= {0, 0, 0, 0, 0};
+      q <= 0;
     else
       q <= d;
 
