@@ -6,16 +6,16 @@
 # asciiz директива используется дял размещения строк
 # asciiz автоматически добавит нулевой символ в конец строки
 # FIXME исправьте строки, чтобы они выдавали корректные отладочные значения 
-case1:   .asciiz "f(x) should be y, and it is: "
-case2:   .asciiz "f(x) should be y, and it is: "
-case3:   .asciiz "f(x) should be y, and it is: "
-case4:   .asciiz "f(x) should be y, and it is: "
-case5:   .asciiz "f(x) should be y, and it is: "
-case6:   .asciiz "f(x) should be y, and it is: "
-case7:   .asciiz "f(x) should be y, and it is: "
+case1:   .asciiz "f(-5) should be 25, and it is: "
+case2:   .asciiz "f(-3) should be 8, and it is: "
+case3:   .asciiz "f(-1) should be 6, and it is: "
+case4:   .asciiz "f(0) should be 3, and it is: "
+case5:   .asciiz "f(1) should be -12, and it is: "
+case6:   .asciiz "f(3) should be -34, and it is: "
+case7:   .asciiz "f(5) should be 5, and it is: "
 
 # FIXME Разместите значения из вашего варианта в этом массиве 
-output: .word   1, 2, 3, 4, 5, 6, 7
+output: .word   25, 8, 6, 3, -12, -34, 5
 
 .text
 main:
@@ -27,7 +27,7 @@ main:
     jal print_str 
     # Загружаем первый аргумент функции f в a0
     # FIXME Подставьте первый аргумент case1
-    li a0, -3 
+    li a0, -5 
     # загружаем второй аргумент функции f в a1
     # `output` -- это указатель на массив, который содержит возможные выходные значения f
     la a1, output
@@ -45,7 +45,7 @@ main:
     la a0, case2
     jal print_str
     # FIXME Подставьте первый аргумент case1
-    li a0, -2
+    li a0, -3
     la a1, output
     jal f                
     jal print_int
@@ -85,7 +85,7 @@ main:
     la a0, case6
     jal print_str
     # FIXME Подставьте первый аргумент case1
-    li a0, 2
+    li a0, 3
     la a1, output
     jal f               
     jal print_int
@@ -95,7 +95,7 @@ main:
     la a0, case7
     jal print_str
     # FIXME Подставьте первый аргумент case1
-    li a0, 3
+    li a0, 5
     la a1, output
     jal f                
     jal print_int
@@ -109,9 +109,18 @@ main:
 # a0 значение для которого мы хотим вычислить функцию f
 # a1 адрес выходного ("output") массива, содержащего все допустимые варианты.
 f:
+    addi a0, 5
+    srli a0, 1
+    slli a0, 2
+
+    add t0, x0, a1
+    add t0, t0, a0
+
+    lw a2, 0(t0)
+    
     # FIXME
     # YOUR CODE GOES HERE!
-
+    add a1, x0, a2
     jr ra               # Всегда вызывайте jr ra для выхода из функции!
 
 # печатает одно целое число
