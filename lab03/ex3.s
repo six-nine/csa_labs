@@ -48,7 +48,7 @@ loop:
     beq t2, x0, exit # if (source[k] == 0) exit
     add a0, x0, t2 # a0 = source[k]
     addi sp, sp, -8 # sp -= 8
-    sw t0, 0(sp)    # args to function
+    sw t0, 0(sp)
     sw t2, 4(sp)
     jal fun
     lw t0, 0(sp)
