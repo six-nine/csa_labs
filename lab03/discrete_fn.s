@@ -109,18 +109,24 @@ main:
 # a0 значение для которого мы хотим вычислить функцию f
 # a1 адрес выходного ("output") массива, содержащего все допустимые варианты.
 f:
-    addi a0, 5
-    srli a0, 1
-    slli a0, 2
+    addi t1, x0, 1
+    slli t1, t1, 31
+    and  t1, t1, a0 # t1 is 1000..00 if a0 is negative, and 0 otherwise
+    srai t1, t1, 30 # t1 is 1111..10 if a0 is negative, and 0 otherwise
+    ori  t1, t1, 1  # t1 is sgn(a0) 1 (1 or -1)
 
-    add t0, x0, a1
-    add t0, t0, a0
+    add  a0, a0, t1 # [-5, -3, -1, 0, 1, 3, 5] ->[-6, -4, -2, 1, 2, 4, 6]
+    srai a0, a0, 1  # [-3, -2, -1, 0, 1, 2, 3]
+    addi a0, a0, 3  # [0, 1, 2, 3, 4, 5, 6]
+
+    slli a0, a0, 2
+    add t0, a1, a0
 
     lw a2, 0(t0)
     
     # FIXME
     # YOUR CODE GOES HERE!
-    add a1, x0, a2
+    add a0, x0, a2
     jr ra               # Всегда вызывайте jr ra для выхода из функции!
 
 # печатает одно целое число
