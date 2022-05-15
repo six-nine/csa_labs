@@ -105,12 +105,12 @@ module testbench();
   always @(negedge clk)
     begin
       if(MemWrite) begin
-        if(DataAdr === 100 & WriteData === 25) begin
+        if(DataAdr === 100 & WriteData === 11) begin
           $display("Simulation succeeded");
-          $stop;
+          $finish;
         end else if (DataAdr !== 96) begin
           $display("Simulation failed");
-          $stop;
+          $finish;
         end
       end
     end
@@ -219,6 +219,7 @@ module aludec(input  logic       opb5,
                  3'b010:    ALUControl = 3'b101; // slt, slti
                  3'b110:    ALUControl = 3'b011; // or, ori
                  3'b111:    ALUControl = 3'b010; // and, andi
+                 3'b100:    ALUControl = 3'b100; // xor, xori
                  default:   ALUControl = 3'bxxx; // ???
                endcase
     endcase
@@ -288,18 +289,40 @@ module extend(input  logic [31:7] instr,
               input  logic [1:0]  immsrc,
               output logic [31:0] immext);
  
+  logic instr31, instr7, instr20;
+  logic [31:20] instr31_20;
+  logic [31:25] instr31_25;
+  logic [11:7] instr11_7;
+  logic [30:25] instr30_25;
+  logic [11:8] instr11_8;
+  logic [19:12] instr19_12;
+  logic [30:21] instr30_21;
+
+  assign instr31 = instr[31];
+  assign instr7 = instr[7];
+  assign instr20 = instr[20];
+
+  assign instr31_20 = instr[31:20];
+  assign instr31_25 = instr[31:25];
+  assign instr11_7  = instr[11:7];
+  assign instr30_25 = instr[30:25];
+  assign instr11_8  = instr[11:8];
+  assign instr19_12 = instr[19:12];
+  assign instr30_21 = instr[30:21];
+
   always_comb
     case(immsrc) 
                // I-type 
-      2'b00:   immext = {{20{instr[31]}}, instr[31:20]};  
+      2'b00:   immext = {{20{instr31}}, instr31_20};  
                // S-type (stores)
-      2'b01:   immext = {{20{instr[31]}}, instr[31:25], instr[11:7]}; 
+      2'b01:   immext = {{20{instr31}}, instr31_25, instr11_7}; 
                // B-type (branches)
-      2'b10:   immext = {{20{instr[31]}}, instr[7], instr[30:25], instr[11:8], 1'b0}; 
+      2'b10:   immext = {{20{instr31}}, instr7, instr30_25, instr11_8, 1'b0}; 
                // J-type (jal)
-      2'b11:   immext = {{12{instr[31]}}, instr[19:12], instr[20], instr[30:21], 1'b0}; 
+      2'b11:   immext = {{12{instr31}}, instr19_12, instr20, instr30_21, 1'b0}; 
       default: immext = 32'bx; // undefined
     endcase             
+
 endmodule
 
 module flopr #(parameter WIDTH = 8)
@@ -362,6 +385,8 @@ module alu(input  logic [31:0] a, b,
 
   assign condinvb = alucontrol[0] ? ~b : b;
   assign sum = a + condinvb + alucontrol[0];
+  assign sum31 = sum[31];
+  assign b40 = b[4:0];
   assign isAddSub = ~alucontrol[2] & ~alucontrol[1] |
                     ~alucontrol[1] & alucontrol[0];
 
@@ -372,11 +397,11 @@ module alu(input  logic [31:0] a, b,
       3'b010:  result = a & b;       // and
       3'b011:  result = a | b;       // or
       3'b100:  result = a ^ b;       // xor
-      3'b101:  result = sum[31] ^ v; // slt
-      3'b110:  result = a << b[4:0]; // sll
-      3'b111:  result = a >> b[4:0]; // srl
-      default: result = 32'bx;
-    endcase
+      3'b101:  result = sum31 ^ v; // slt
+      3'b110:  result = a << b40; // sll
+      3'b111:  result = a >> b40; // srl
+     default: result = 32'bx;
+    endcase 
 
   assign zero = (result == 32'b0);
   assign v = ~(alucontrol[0] ^ a[31] ^ b[31]) & (a[31] ^ sum[31]) & isAddSub;
