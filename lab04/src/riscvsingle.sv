@@ -92,6 +92,8 @@ module testbench();
   // initialize test
   initial
     begin
+      $dumpfile("riscvsingle.vcd");
+      $dumpvars(0, testbench);
       reset <= 1; # 22; reset <= 0;
     end
 
