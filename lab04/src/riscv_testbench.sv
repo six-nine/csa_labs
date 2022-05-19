@@ -15,6 +15,10 @@ module testbench();
   initial
     begin
       hash <= 0;
+
+      $dumpfile("riscvmulti.vcd");
+      $dumpvars(0, testbench);
+
       reset <= 1; # 22; reset <= 0;
     end
 
@@ -28,13 +32,13 @@ module testbench();
   always @(negedge clk)
     begin
       if(MemWrite) begin
-        if(DataAdr === 100 & WriteData === 25) begin
+        if(DataAdr === 100 & WriteData === 11) begin
           $display("Simulation succeeded");
- 	   	  $display("hash = %h", hash);
-          $stop;
+ 	   	    $display("hash = %h", hash);
+          $finish;
         end else if (DataAdr !== 96) begin
           $display("Simulation failed");
-          $stop;
+          $finish;
         end
       end
     end
